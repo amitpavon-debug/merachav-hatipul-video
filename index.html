@@ -1,194 +1,276 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="he">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>מרחב הטיפול — תוכנה לניהול מטופלים</title>
-<meta name="description" content="תוכנה לניהול מטופלים ותיעוד מפגשים — מאובטחת, פשוטה, ועובדת לגמרי ללא אינטרנט.">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@300;400;600&family=Heebo:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f3ee">
+<meta name="description" content="מרחב הטיפול — תוכנה לניהול מטופלים, תיעוד פגישות ומעקב תשלומים, שפועלת מקומית במחשב ללא צורך בחיבור לאינטרנט. הורדה והוראות התקנה ל-Windows ול-Mac.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מרחב הטיפול | מקום אחד לניהול הקליניקה">
+<meta property="og:description" content="ניהול מטופלים ותיעוד פגישות — המידע נשמר אצלך במחשב. גלה איך מתחילים והורד ל-Windows או ל-Mac.">
+<title>מרחב הטיפול | ניהול מטופלים ותיעוד פגישות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;500;600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --cream:#f7f3ee;
-  --warm:#ede5d8;
-  --brown:#6b5240;
-  --brown-light:#9a7a62;
-  --brown-dark:#3d2e22;
-  --text:#2c1f14;
-  --text-muted:#8a7060;
-  --gold:#c8a96e;
-  --green:#7a9e8a;
-}
-html{scroll-behavior:smooth;}
-body{font-family:'Heebo',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
-
-nav{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 3rem;background:var(--cream);border-bottom:1px solid rgba(107,82,64,0.12);position:sticky;top:0;z-index:100;}
-.nav-logo{font-family:'Noto Serif Hebrew',serif;font-size:15px;font-weight:600;color:var(--brown-dark);}
-.nav-cta{background:var(--brown);color:#fff;padding:6px 16px;border-radius:6px;font-size:13px;text-decoration:none;transition:background .2s;}
-.nav-cta:hover{background:var(--brown-dark);}
-
-/* Hero */
-.hero{padding:5rem 3rem 3rem;max-width:900px;margin:0 auto;text-align:center;}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(122,158,138,0.15);border:1px solid rgba(122,158,138,0.3);border-radius:20px;padding:5px 14px;font-size:13px;color:var(--green);margin-bottom:1.5rem;}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
-.hero h1{font-family:'Noto Serif Hebrew',serif;font-size:42px;font-weight:600;line-height:1.3;color:var(--brown-dark);margin-bottom:1rem;}
-.hero h1 em{font-style:normal;color:var(--brown);}
-.hero-sub{font-size:17px;color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;font-weight:300;max-width:600px;margin-left:auto;margin-right:auto;}
-
-/* Trust box */
-.trust-box{display:inline-block;background:rgba(107,82,64,0.07);border-right:3px solid var(--brown);border-radius:6px;padding:14px 20px;margin-bottom:2rem;text-align:right;}
-.trust-box p:first-child{font-size:15px;color:var(--brown-dark);font-weight:500;margin-bottom:5px;}
-.trust-box p:last-child{font-size:13px;color:var(--text-muted);line-height:1.7;}
-
-/* Download button */
-.download-wrap{margin-bottom:1rem;}
-.btn-download{display:inline-flex;align-items:center;gap:10px;background:var(--brown);color:#fff;padding:15px 36px;border-radius:10px;font-size:16px;font-weight:500;text-decoration:none;transition:all .2s;font-family:'Heebo',sans-serif;}
-.btn-download:hover{background:var(--brown-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(61,46,34,0.2);}
-.btn-download svg{width:20px;height:20px;}
-.download-note{font-size:12px;color:var(--text-muted);margin-top:8px;}
-
-/* Video section */
-.video-section{scroll-margin-top:60px;padding:3rem 3rem;max-width:900px;margin:0 auto;}
-.video-label{font-size:12px;letter-spacing:0.12em;color:var(--brown-light);text-transform:uppercase;margin-bottom:0.8rem;text-align:center;}
-.video-title{font-family:'Noto Serif Hebrew',serif;font-size:26px;font-weight:600;color:var(--brown-dark);margin-bottom:2rem;text-align:center;}
-.video-wrap{scroll-margin-top:60px;position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;background:var(--brown-dark);box-shadow:0 20px 60px rgba(61,46,34,0.25);}
-.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;}
-.video-placeholder-icon{width:72px;height:72px;background:rgba(200,169,110,0.2);border:2px solid rgba(200,169,110,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;}
-.video-placeholder-icon svg{width:28px;height:28px;fill:#c8a96e;margin-right:-4px;}
-.video-placeholder p{color:rgba(232,224,208,0.6);font-size:15px;}
-
-/* Features */
-.features{background:var(--warm);padding:4rem 3rem;}
-.features-inner{max-width:900px;margin:0 auto;}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem;}
-.feature{background:#fff;border:1px solid rgba(107,82,64,0.1);border-radius:12px;padding:1.5rem;transition:transform .2s;}
-.feature:hover{transform:translateY(-3px);}
-.feature-num{font-family:'Noto Serif Hebrew',serif;font-size:32px;color:rgba(200,169,110,0.3);font-weight:600;margin-bottom:0.5rem;line-height:1;}
-.feature h3{font-size:15px;font-weight:500;margin-bottom:0.5rem;color:var(--brown-dark);}
-.feature p{font-size:13px;color:var(--text-muted);line-height:1.7;}
-
-/* CTA bottom */
-.cta-bottom{padding:4rem 3rem;max-width:700px;margin:0 auto;text-align:center;}
-.cta-bottom h2{font-family:'Noto Serif Hebrew',serif;font-size:28px;font-weight:600;color:var(--brown-dark);margin-bottom:1rem;}
-.cta-bottom p{font-size:15px;color:var(--text-muted);margin-bottom:2rem;line-height:1.7;}
-
-/* Contact */
-.contact{background:var(--warm);padding:3rem;text-align:center;}
-.contact-inner{max-width:500px;margin:0 auto;}
-.contact h3{font-family:'Noto Serif Hebrew',serif;font-size:20px;font-weight:600;color:var(--brown-dark);margin-bottom:1.5rem;}
-.contact-card{background:#fff;border:1px solid rgba(107,82,64,0.12);border-radius:12px;padding:1.5rem;text-align:right;margin-bottom:1rem;}
-.contact-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(107,82,64,0.08);font-size:14px;}
-.contact-row:last-child{border:none;}
-.contact-label{color:var(--text-muted);}
-.contact-val{color:var(--brown-dark);font-weight:500;}
-.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:11px 24px;border-radius:8px;font-size:14px;text-decoration:none;transition:all .2s;}
-.wa-btn:hover{background:#1da851;}
-
-footer{background:var(--brown-dark);color:rgba(255,255,255,0.5);text-align:center;padding:1.5rem;font-size:13px;}
-footer span{color:rgba(255,255,255,0.8);}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.hero{animation:fadeUp .7s ease both;}
-
-@media(max-width:768px){
-  nav{padding:1rem 1.5rem;}
-  .hero{padding:3rem 1.5rem 2rem;}
-  .hero h1{font-size:28px;}
-  .features-grid{grid-template-columns:1fr;}
-  .features,.video-section,.cta-bottom{padding:3rem 1.5rem;}
-  .contact{padding:2rem 1.5rem;}
-}
+:root{--cream:#f7f3ee;--warm:#ede5d8;--brown:#6b5240;--brown-light:#9a7a62;--brown-dark:#3d2e22;--text:#2c1f14;--text-muted:#8a7060;--gold:#c8a96e;--green:#7a9e8a;--white:#fff;--line:rgba(107,82,64,.17);--shadow:0 22px 64px rgba(61,46,34,.09)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;background:var(--cream);font-family:'Heebo',Arial,sans-serif;color:var(--text);line-height:1.7}
+a{color:inherit}button{font:inherit}svg{display:block}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.container{width:min(1140px,calc(100% - 40px));margin-inline:auto}
+.skip{position:absolute;top:-100px;right:12px;padding:10px 16px;background:var(--brown-dark);color:#fff;z-index:999}
+.skip:focus{top:12px}
+.top{position:sticky;top:0;z-index:100;background:rgba(247,243,238,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
+.top__in{min-height:76px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.brand__mark{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(107,82,64,.2);border-radius:15px;color:var(--brown-dark);background:var(--warm);font-family:'Noto Serif Hebrew',serif;font-size:23px}
+.brand b{display:block;color:var(--brown-dark);font:600 17px 'Noto Serif Hebrew',serif;line-height:1.35}
+.brand small{display:block;color:var(--text-muted);font-size:11px;letter-spacing:.02em}
+.navlinks{display:flex;align-items:center;gap:26px;margin-inline:auto}
+.navlinks a{text-decoration:none;font-size:14px;color:var(--brown);white-space:nowrap}
+.navlinks a:hover{color:var(--brown-dark)}
+.nav-cta{white-space:nowrap;text-decoration:none;border-radius:999px;background:var(--brown);color:#fff;padding:10px 21px;font-size:13px;font-weight:600}
+.nav-cta:hover,.btn--primary:hover{background:var(--brown-dark)}
+.mobile-menu{display:none}
+.mobile-menu summary{cursor:pointer;list-style:none;border:1px solid var(--line);padding:8px 13px;border-radius:10px}
+.mobile-menu summary::-webkit-details-marker{display:none}
+.mobile-menu__links{position:absolute;left:20px;right:20px;top:69px;background:#fff;padding:15px;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:14px}
+.mobile-menu__links a{display:block;padding:9px;text-decoration:none}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--brown);font-size:12px;letter-spacing:.04em;font-weight:600}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--gold)}
+.hero{position:relative;overflow:hidden;padding:94px 0 91px;text-align:center}
+.hero::before,.hero::after{position:absolute;content:"";border:1px solid rgba(200,169,110,.26);width:540px;height:540px;border-radius:50%;pointer-events:none}
+.hero::before{top:-260px;right:-240px}.hero::after{bottom:-350px;left:-230px}
+.hero__inner{position:relative;z-index:1;max-width:800px;margin:auto}
+.hero h1,.section-title,.story h2,.bottom-cta h2{font-family:'Noto Serif Hebrew',serif;color:var(--brown-dark);font-weight:600;line-height:1.35}
+.hero h1{font-size:clamp(36px,5vw,66px);letter-spacing:-1.4px;margin:18px 0 24px}
+.hero h1 em{font-style:normal;color:var(--brown-light)}
+.hero__sub{font-size:clamp(16px,1.8vw,19px);color:var(--text-muted);max-width:665px;margin:0 auto 28px;line-height:1.9}
+.actions{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:49px;padding:12px 24px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--brown);transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn--primary{background:var(--brown);color:#fff}
+.btn--outline{background:transparent;color:var(--brown)}
+.btn--outline:hover{background:var(--warm)}
+.btn--soft{border-color:rgba(107,82,64,.18);background:var(--warm);color:var(--brown-dark)}
+.hero__meta{font-size:13px;color:var(--text-muted);margin-top:18px}
+.hero__meta span{display:inline-block;margin:0 7px}
+.trust-strip{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.trust-item{background:#fff;padding:28px 27px;text-align:center}
+.trust-item__icon{width:45px;height:45px;display:grid;place-items:center;margin:0 auto 10px;background:var(--cream);border-radius:50%;font-size:23px;color:var(--brown)}
+.trust-item b{display:block;color:var(--brown-dark);font-size:16px;font-weight:600}
+.trust-item p{margin:4px 0 0;font-size:13px;color:var(--text-muted)}
+.section{padding:100px 0}
+.section-head{text-align:center;max-width:650px;margin:0 auto 44px}
+.section-title{font-size:clamp(28px,3vw,39px);margin:12px 0 12px}
+.section-head p{color:var(--text-muted);margin:0;font-size:16px}
+.story{background:var(--warm);margin-top:82px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{position:relative;padding:28px 22px;background:#fff;border:1px solid var(--line);border-radius:18px;min-height:207px}
+.step__no{font:600 29px 'Noto Serif Hebrew',serif;color:var(--gold)}
+.step h3{font-size:17px;color:var(--brown-dark);margin:10px 0 8px}
+.step p{font-size:14px;color:var(--text-muted);margin:0}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:18px;padding:30px;min-height:170px}
+.feature__mark{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--warm);color:var(--brown);font-size:21px;margin-bottom:12px}
+.feature h3{font-size:17px;font-weight:600;color:var(--brown-dark);margin:0 0 7px}
+.feature p{font-size:14px;color:var(--text-muted);margin:0}
+.video{background:var(--brown-dark);color:var(--cream)}
+.video .eyebrow,.video .section-title{color:var(--cream)}
+.video .section-head p{color:#dbcdbf}
+.video__stage{margin:0 auto;max-width:810px;aspect-ratio:16/8.2;border-radius:22px;background:radial-gradient(circle at 25% 25%,rgba(200,169,110,.24),transparent 35%),linear-gradient(135deg,#584333,#332519);border:1px solid rgba(200,169,110,.31);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;box-shadow:0 24px 50px rgba(0,0,0,.12);text-align:center;padding:26px}
+.video__play{width:82px;height:82px;border-radius:50%;border:2px solid rgba(200,169,110,.65);background:rgba(255,255,255,.07);display:grid;place-items:center;color:var(--gold);font-size:28px}
+.video__stage b{font:500 23px 'Noto Serif Hebrew',serif}
+.video__stage p{font-size:14px;color:#dbcdbf;margin:0;max-width:500px}
+.video__footer{display:flex;justify-content:center;margin-top:22px}
+.video__footer a{color:#f4dbc0;text-underline-offset:5px}
+.install{background:var(--warm)}
+.install__intro{max-width:790px;margin:0 auto 34px;text-align:center}
+.install__intro .section-title{margin-bottom:8px}
+.install__intro p{color:var(--text-muted);margin:0}
+.install-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+.install-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 12px 28px rgba(61,46,34,.045);display:flex;flex-direction:column}
+.install-card__top{display:flex;align-items:center;gap:14px;margin-bottom:15px}
+.platform-icon{width:59px;height:59px;background:var(--cream);border-radius:17px;display:grid;place-items:center;font-size:29px;color:var(--brown-dark)}
+.platform-name{font:600 23px 'Noto Serif Hebrew',serif;color:var(--brown-dark)}
+.platform-sub{font-size:13px;color:var(--text-muted)}
+.install-card .btn{width:100%;border-radius:12px}
+.install-note{margin:11px 0 20px;font-size:13px;color:var(--text-muted);line-height:1.7}
+.install-card ol{padding:0 22px 0 0;margin:0 0 16px;flex:1}
+.install-card li{padding-right:6px;margin:0 0 12px;color:var(--brown-dark);font-size:14px}
+.install-card li::marker{color:var(--brown-light);font-weight:700}
+.install-card li small{display:block;color:var(--text-muted);font-size:12px}
+.install-card strong{font-weight:600}
+.install-card a:not(.btn){color:var(--brown);text-underline-offset:3px}
+.notice{border-radius:14px;background:var(--cream);border:1px solid var(--line);padding:15px 18px;font-size:13px;color:var(--brown-dark);margin-top:auto}
+.notice strong{display:block;margin-bottom:4px}
+.notice p{margin:0;color:var(--text-muted)}
+.note-global{max-width:1000px;margin:24px auto 0;text-align:center;color:var(--text-muted);font-size:13px}
+.note-global a{color:var(--brown)}
+.faq{background:var(--cream)}
+.faq-list{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.faq details{border:1px solid var(--line);border-radius:14px;background:#fff;padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;padding:19px 0;font-size:15px;font-weight:600;color:var(--brown-dark);display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:24px;font-weight:300;color:var(--brown-light)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{color:var(--text-muted);font-size:14px;margin:0 0 20px;line-height:1.85}
+.bottom-cta{text-align:center;background:linear-gradient(130deg,#fff, var(--cream));padding:85px 0}
+.bottom-cta h2{font-size:clamp(27px,3vw,40px);margin:0 0 15px}
+.bottom-cta p{color:var(--text-muted);margin:0 auto 25px}
+footer{background:var(--brown-dark);padding:32px 0;color:#e6d9cc;font-size:13px}
+.footer-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer-links a{text-decoration:none;color:#e6d9cc}
+.footer-links a:hover{text-decoration:underline}
+@media(max-width:950px){.navlinks{gap:16px}.steps{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:730px){.top__in{min-height:67px}.navlinks{display:none}.top__in>.nav-cta{margin-right:auto}.mobile-menu{display:block}.hero{padding:65px 0 65px}.hero h1{letter-spacing:0}.trust-strip{grid-template-columns:1fr}.trust-item{padding:21px}.section{padding:68px 0}.story{margin-top:54px}.steps,.feature-grid,.install-grid{grid-template-columns:1fr}.step{min-height:auto}.video__stage{aspect-ratio:4/3}.install-card{padding:23px}}
+@media(max-width:420px){.container{width:min(100% - 28px,1140px)}.top__in>.nav-cta{padding:9px 13px;font-size:12px}.brand b{font-size:14px}.brand small{font-size:9px}.brand__mark{width:39px;height:39px}.hero__meta span{margin:0 3px}.actions .btn{width:100%}.video__stage{aspect-ratio:auto;min-height:280px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="nav-logo">מרחב הטיפול</div>
-  <a href="#download" class="nav-cta">הורד בחינם</a>
-</nav>
-
-<section class="hero">
-  <h1>ניהול מטופלים <em>בביטחה מלאה</em></h1>
-  <p class="hero-sub">תוכנה לתיעוד מפגשים, מעקב תשלומים וניהול מטופלים — הכל נשמר אצלך במחשב בלבד, מוצפן ומאובטח.</p>
-
-  <div class="trust-box">
-    <p>המטופלים שלך סומכים עליך. אתה יכול לסמוך על מרחב הטיפול.</p>
-    <p>כמטפל, אתה מחויב לסודיות מקצועית — הנתונים לא עוברים שום שרת, לא נשמרים בענן, ולא נגישים לאף אחד חוץ ממך.</p>
-  </div>
-
-  <div class="download-wrap" id="download">
-    <a href="https://github.com/amitpavon-debug/merachav-hatipul/releases/download/v1.0/Setup.1.0.0.exe" class="btn-download">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-      הורד גרסת ניסיון חינמית
+<a class="skip" href="#main">דלגו לתוכן</a>
+<header class="top">
+  <div class="container top__in">
+    <a class="brand" href="#top" aria-label="מרחב הטיפול — לראש הדף">
+      <span class="brand__mark" aria-hidden="true">מ</span>
+      <span><b>מרחב הטיפול</b><small>ניהול קליניקה בראש שקט</small></span>
     </a>
-    <p class="download-note">עד 3 מטופלים · ללא הגבלת זמן · ללא כרטיס אשראי · Windows בלבד</p>
+    <nav class="navlinks" aria-label="ניווט ראשי">
+      <a href="#how">איך זה עובד</a>
+      <a href="#features">יכולות התוכנה</a>
+      <a href="#video">סרטון הדרכה</a>
+      <a href="#install">הורדה והתקנה</a>
+      <a href="#faq">שאלות נפוצות</a>
+    </nav>
+    <a class="nav-cta" href="#install">להורדת התוכנה ←</a>
+    <details class="mobile-menu">
+      <summary aria-label="פתיחת תפריט ניווט">☰</summary>
+      <div class="mobile-menu__links">
+        <a href="#how">איך זה עובד</a><a href="#features">יכולות התוכנה</a>
+        <a href="#video">סרטון הדרכה</a><a href="#install">הורדה והתקנה</a><a href="#faq">שאלות נפוצות</a>
+      </div>
+    </details>
   </div>
-</section>
-
-<section class="video-section">
-  <div class="video-label">צפה בהדגמה</div>
-  <div class="video-title">ראה איך זה עובד</div>
-  <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/Vhx3txNQ3AI" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-  </div>
-</section>
-
-<section class="features">
-  <div class="features-inner">
-    <div class="video-label">מה תקבל</div>
-    <div class="video-title" style="text-align:right">כל מה שמטפל צריך</div>
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-num">01</div>
-        <h3>תיעוד מפגשים</h3>
-        <p>רשום סיכומים, נושאים, הערות ומשימות לפגישה הבאה — הכל מסודר לפי מטופל ותאריך.</p>
+</header>
+<main id="main">
+  <div id="top"></div>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="eyebrow">מרחב פרטי לכל מה שחשוב בקליניקה</div>
+      <h1 id="hero-title">כל הטיפול במקום אחד.<br><em>הנתונים נשארים אצלך.</em></h1>
+      <p class="hero__sub">תיעוד פגישות, ניהול מטופלים ומעקב תשלומים — בתוכנה פשוטה ונעימה, שפועלת על המחשב שלך גם בלי חיבור לאינטרנט.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#install">להורדה ולהתקנה ←</a>
+        <a class="btn btn--outline" href="#how">לגלות איך זה עובד</a>
       </div>
-      <div class="feature">
-        <div class="feature-num">02</div>
-        <h3>מעקב תשלומים</h3>
-        <p>ראה מי שילם ומי חייב, כמה הכנסת בחודש, וייצא הכל לאקסל בלחיצה אחת.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-num">03</div>
-        <h3>אבטחה מלאה</h3>
-        <p>הנתונים מוצפנים בסיסמה אישית. אף שרת, אף ענן — הכל נשמר רק אצלך.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-num">04</div>
-        <h3>גיבוי וייצוא</h3>
-        <p>גבה את כל הנתונים לקובץ מוצפן ושחזר בכל מחשב. ייצוא לאקסל תמיד זמין.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-num">05</div>
-        <h3>ללא אינטרנט</h3>
-        <p>עובד תמיד — גם בלי חיבור לרשת, גם בחו"ל, גם כשהשרת "נופל".</p>
-      </div>
-      <div class="feature">
-        <div class="feature-num">06</div>
-        <h3>פשוט לשימוש</h3>
-        <p>ממשק נקי שתבין ב-5 דקות. לא צריך הדרכה ולא ידע טכני.</p>
-      </div>
+      <p class="hero__meta"><span>Windows</span> · <span>Mac</span> · <span>שימוש ללא חיבור שוטף לאינטרנט</span></p>
+    </div>
+  </section>
+  <div class="container">
+    <div class="trust-strip" aria-label="יתרונות מרכזיים">
+      <div class="trust-item"><div class="trust-item__icon" aria-hidden="true">⌂</div><b>המידע נשמר במחשב שלך</b><p>בלי להעביר את תיקי המטופלים לענן</p></div>
+      <div class="trust-item"><div class="trust-item__icon" aria-hidden="true">✎</div><b>פחות עבודה מנהלתית</b><p>מפגשים, סיכומים ותשלומים במקום מסודר</p></div>
+      <div class="trust-item"><div class="trust-item__icon" aria-hidden="true">♡</div><b>נבנתה למטפלים</b><p>ממשק ברור כדי להתמקד באנשים</p></div>
     </div>
   </div>
-</section>
-
-<section class="cta-bottom">
-  <h2>מוכן לנסות?</h2>
-  <p>הורד גרסת ניסיון חינמית ותראה בעצמך. ללא התחייבות, ללא כרטיס אשראי.</p>
-  <a href="https://github.com/amitpavon-debug/merachav-hatipul/releases/download/v1.0/Setup.1.0.0.exe" class="btn-download">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-    הורד בחינם
-  </a>
-</section>
-
-<div class="contact">
-  <div class="contact-inner">
-    <h3>שאלות? נשמח לעזור</h3>
-    <div class="contact-card">
-      <div class="contact-row"><span class="contact-label">טלפון</span><span class="contact-val">054-991-3379</span></div>
-      <div class="contact-row"><span class="contact-label">מייל</span><span class="contact-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="76171b1f0258061700191836111b171f1a5815191b">[email&#160;protected]</a></span></div>
+  <section class="section story" id="how" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">תהליך פשוט</span><h2 class="section-title" id="how-title">כך נראית העבודה עם מרחב הטיפול</h2><p>ארבעה צעדים שעוזרים לשמור על סדר — מהפגישה הראשונה ועד הגיבוי.</p></div>
+      <div class="steps">
+        <article class="step"><div class="step__no">01</div><h3>פותחים כרטיס מטופל</h3><p>מרכזים את פרטי המטופל במקום אחד.</p></article>
+        <article class="step"><div class="step__no">02</div><h3>מתעדים את המפגש</h3><p>שומרים סיכומים והערות לפי מטופל ופגישה.</p></article>
+        <article class="step"><div class="step__no">03</div><h3>עוקבים אחרי תשלומים</h3><p>רואים את מצב התשלומים בלי לחפש בין קבצים.</p></article>
+        <article class="step"><div class="step__no">04</div><h3>מגבים את המידע</h3><p>יוצרים גיבוי ושומרים אותו במקום בטוח לפי בחירתך.</p></article>
+      </div>
     </div>
-    <a href="https://wa.me/972549913379?text=שלום, אני מעוניין במרחב הטיפול" class="wa-btn" target="_blank">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005
+  </section>
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">בדיוק מה שצריך</span><h2 class="section-title" id="features-title">כלים נוחים לניהול השוטף</h2><p>פחות מעבר בין מחברות, קבצים וטבלאות. יותר רצף בעבודה היומיומית.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><div class="feature__mark" aria-hidden="true">▤</div><h3>תיק מטופל מסודר</h3><p>פרטי המטופל והיסטוריית המפגשים נגישים מתוך המחשב.</p></article>
+        <article class="feature"><div class="feature__mark" aria-hidden="true">✍</div><h3>תיעוד מפגשים</h3><p>סיכומים, נושאים והערות — באופן מסודר לכל מפגש.</p></article>
+        <article class="feature"><div class="feature__mark" aria-hidden="true">₪</div><h3>מעקב כספי</h3><p>ניהול מצב התשלומים וייצוא מידע כשצריך.</p></article>
+        <article class="feature"><div class="feature__mark" aria-hidden="true">◇</div><h3>גישה מקומית</h3><p>המידע אינו מועבר לשרת של שירות ענן כחלק מהעבודה בתוכנה.</p></article>
+        <article class="feature"><div class="feature__mark" aria-hidden="true">↺</div><h3>גיבוי ושחזור</h3><p>אפשרות ליצירת גיבוי כדי שלא להיות תלויים במחשב יחיד.</p></article>
+        <article class="feature"><div class="feature__mark" aria-hidden="true">☼</div><h3>ממשק נעים ופשוט</h3><p>מיועד להתנהלות יומיומית בלי צורך בידע טכני מתקדם.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section video" id="video" aria-labelledby="video-title">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">הדרכה והיכרות</span><h2 class="section-title" id="video-title">נכיר את התוכנה צעד אחר צעד</h2><p>בקרוב יופיע כאן סרטון ההסבר שיציג את סביבת העבודה ואופן השימוש.</p></div>
+      <div class="video__stage" role="img" aria-label="אזור ייעודי לסרטון הדרכה עתידי — עדיין אין סרטון לצפייה">
+        <div class="video__play" aria-hidden="true">▷</div><b>סרטון ההדרכה בהכנה</b>
+        <p>בינתיים אפשר להוריד את התוכנה ולהיעזר בהוראות ההתקנה המפורטות שמופיעות ממש כאן בהמשך.</p>
+      </div>
+      <div class="video__footer"><a href="#install">מעבר להורדה ולמדריך ההתקנה ↓</a></div>
+    </div>
+  </section>
+  <section class="section install" id="install" aria-labelledby="install-title">
+    <div class="container">
+      <div class="install__intro"><span class="eyebrow">מתחילים כאן</span><h2 class="section-title" id="install-title">הורדה והתקנה, בלי לנחש מה עושים</h2><p>בחרו את מערכת ההפעלה ועקבו אחר הצעדים. ב־Mac יש אישור אבטחה נוסף בהפעלה הראשונה.</p></div>
+      <div class="install-grid">
+        <article class="install-card" aria-labelledby="win-title">
+          <div class="install-card__top"><div class="platform-icon" aria-hidden="true">⊞</div><div><div class="platform-name" id="win-title">Windows</div><div class="platform-sub">התקנה עם קובץ EXE</div></div></div>
+          <a class="btn btn--primary" href="https://github.com/amitpavon-debug/merachav-video/releases/download/v1.0/Setup.3.0.0.exe" rel="noopener">↓ הורדה ישירה ל־Windows</a>
+          <p class="install-note">קובץ התקנה שפורסם ב־GitHub. גרסת Windows החדשה ביותר מהבנייה האחרונה זמינה גם <a href="https://github.com/amitpavon-debug/Merhav-tipul-mac/actions/runs/37073307621#artifacts" target="_blank" rel="noopener noreferrer">בדף הבנייה</a> (דורשת כניסה ל־GitHub).</p>
+          <ol>
+            <li><strong>הורידו</strong> את קובץ ההתקנה למחשב.<small>הקובץ יופיע בדרך כלל בתיקיית ״הורדות״ (Downloads).</small></li>
+            <li><strong>פתחו</strong> את קובץ <span dir="ltr">Setup.3.0.0.exe</span>.</li>
+            <li><strong>פעלו לפי אשף ההתקנה</strong> ובחרו את תיקיית ההתקנה לפי הצורך.</li>
+            <li><strong>פתחו את ״מרחב הטיפול״</strong> מתפריט התחל או מקיצור הדרך שנוצר.</li>
+          </ol>
+          <div class="notice"><strong>אם Windows מציג התראת SmartScreen</strong><p>בדקו שהקובץ הורד מהקישור הרשמי בעמוד. רק אם אתם סומכים על המקור ואימתתם את הקובץ, ניתן לבחור ״מידע נוסף״ ואז ״הפעל בכל זאת״. אין להתעלם מהתראה על קובץ זדוני.</p></div>
+        </article>
+        <article class="install-card" aria-labelledby="mac-title">
+          <div class="install-card__top"><div class="platform-icon" aria-hidden="true">⌘</div><div><div class="platform-name" id="mac-title">Mac</div><div class="platform-sub">כולל הסבר על אישור פתיחה ב־macOS</div></div></div>
+          <a class="btn btn--primary" href="https://github.com/amitpavon-debug/Merhav-tipul-mac/actions/runs/37073307621#artifacts" target="_blank" rel="noopener noreferrer">↓ קבלת גרסת Mac מ־GitHub ↗</a>
+          <p class="install-note"><strong>חשוב:</strong> זו כרגע הורדה דרך GitHub Actions, לא קישור DMG ישיר. יש להתחבר לחשבון GitHub ולהוריד את <span dir="ltr">mac-build</span> באזור Artifacts. קובצי הבנייה זמינים לזמן מוגבל.</p>
+          <ol>
+            <li><strong>היכנסו ל־GitHub</strong> דרך הכפתור שמעל, גללו אל <span dir="ltr">Artifacts</span> ובחרו <span dir="ltr">mac-build</span>.</li>
+            <li><strong>חלצו את הקובץ שהורדתם</strong> אם הגיע כ־ZIP, ואז פתחו את קובץ ה־<span dir="ltr">DMG</span>.</li>
+            <li><strong>גררו את ״מרחב הטיפול״ לתיקיית Applications</strong> (יישומים) וסגרו את חלון ה־DMG.</li>
+            <li><strong>נסו לפתוח את האפליקציה</strong> מתוך תיקיית Applications. ייתכן שתוצג הודעה שאי אפשר לאמת את המפתח.</li>
+            <li><strong>אם מופיעה הודעת מפתח לא מזוהה:</strong> פתחו את ״הגדרות המערכת״ ← ״פרטיות ואבטחה״, גללו לאזור האבטחה ובחרו ״פתח בכל זאת״ (<span dir="ltr">Open Anyway</span>) עבור האפליקציה. אשרו שוב ״פתח״.</li>
+            <li><strong>בהפעלות הבאות</strong> בדרך כלל אפשר לפתוח את האפליקציה כרגיל מתיקיית Applications.</li>
+          </ol>
+          <div class="notice"><strong>הערה חשובה על אבטחת Mac</strong><p>גרסת הבנייה אינה מוצגת כאן כאפליקציה שאושרה על ידי Apple. יש לאשר פתיחה רק אם אימתתם שההורדה מגיעה מהפרויקט שלכם ושאתם סומכים על הקובץ. אם המערכת מציגה שהיישום פגום או עלול להזיק למחשב — אל תעקפו את האזהרה; פנו לתמיכה. <a href="https://support.apple.com/en-us/102445" target="_blank" rel="noopener noreferrer">הנחיות Apple ↗</a>.</p></div>
+        </article>
+      </div>
+      <p class="note-global">צריכים עזרה בהורדה או בהתקנה? <a href="https://wa.me/972549913379?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%96%D7%A8%D7%94%20%D7%91%D7%94%D7%AA%D7%A7%D7%A0%D7%AA%20%D7%9E%D7%A8%D7%97%D7%91%20%D7%94%D7%98%D7%99%D7%A4%D7%95%D7%9C" target="_blank" rel="noopener noreferrer">כתבו לנו ב־WhatsApp</a>.</p>
+    </div>
+  </section>
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">שאלות נפוצות</span><h2 class="section-title" id="faq-title">טוב לדעת לפני שמתחילים</h2></div>
+      <div class="faq-list">
+        <details><summary>האם צריך אינטרנט כדי להשתמש בתוכנה?</summary><p>השימוש השוטף בתוכנה מתבצע מקומית על המחשב, בלי חיבור לשרת ענן. חיבור לאינטרנט נדרש להורדת קובצי ההתקנה.</p></details>
+        <details><summary>איפה נשמר המידע של המטופלים?</summary><p>המידע נשמר בסביבת המחשב המקומית. חשוב להגן על המחשב באמצעות סיסמה, להקפיד על גיבוי בטוח ולשמור את קובצי הגיבוי במקום מוגן.</p></details>
+        <details><summary>למה ב־Mac צריך ללחוץ על ״פתח בכל זאת״?</summary><p>macOS עשוי לחסום פתיחה ראשונה של יישום שהמפתח שלו לא אומת או שלא עבר את תהליך האישור של Apple. מומלץ להעדיף תוכנות חתומות ומאושרות; אם בחרתם להתקין את גרסת הבנייה הנוכחית, בדקו את מקור הקובץ ופעלו רק לפי ההנחיות למעלה.</p></details>
+        <details><summary>צריך חשבון GitHub כדי להוריד?</summary><p>להורדה הישירה של קובץ Windows שפורסם כ־Release לא נדרש חשבון. כדי להוריד את גרסת ה־Mac הנוכחית מתוך GitHub Actions, יש להתחבר לחשבון GitHub.</p></details>
+        <details><summary>האם סרטון ההדרכה כבר זמין?</summary><p>עדיין לא. יוקלט סרטון הסבר נפרד, ועד אז אפשר להיעזר במדריך ההתקנה שבדף ולפנות אלינו לקבלת עזרה.</p></details>
+      </div>
+    </div>
+  </section>
+  <section class="bottom-cta" aria-label="יצירת קשר">
+    <div class="container">
+      <span class="eyebrow">נשאר רק להתחיל</span><h2>יותר סדר בקליניקה. יותר שקט ביום־יום.</h2>
+      <p>הורידו את התוכנה, התקינו בעזרת המדריך, והתחילו להכיר את סביבת העבודה.</p>
+      <div class="actions"><a class="btn btn--primary" href="#install">בחירת גרסה והורדה ←</a><a class="btn btn--outline" href="https://wa.me/972549913379?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%9E%D7%A8%D7%97%D7%91%20%D7%94%D7%98%D7%99%D7%A4%D7%95%D7%9C" target="_blank" rel="noopener noreferrer">שאלה לפני שמתחילים?</a></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container footer-in">
+    <div><strong>מרחב הטיפול</strong> · סביבת עבודה מקומית למטפלים</div>
+    <div class="footer-links"><a href="#install">הורדה והתקנה</a><a href="mailto:Amit.Pavon@gmail.com">מייל</a><a href="https://wa.me/972549913379" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+  </div>
+</footer>
+</body>
+</html>
