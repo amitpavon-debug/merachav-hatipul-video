@@ -235,6 +235,16 @@ h1,h2,h3{letter-spacing:-.025em}
 .js [data-reveal="img"]{transform:translateY(14px) scale(.965)}
 .js [data-reveal="fade"]{transform:none}
 .js [data-reveal].is-in{opacity:1;transform:none}
+
+/* Once reveal finishes, card hover must still lift: the reveal transform
+   otherwise overrides the original :hover rule through CSS specificity. */
+.js .step.is-in:hover,.js .feature.is-in:hover,.js .install-card.is-in:hover,
+.js .video__stage.is-in:hover{transform:translateY(-4px)}
+@media(prefers-reduced-motion:reduce){
+  .js .step.is-in:hover,.js .feature.is-in:hover,.js .install-card.is-in:hover,
+  .js .video__stage.is-in:hover{transform:none}
+}
+
 @media(max-width:730px){
   .top__in>.nav-cta{margin-right:auto}
   .hero{padding:62px 20px 86px}
