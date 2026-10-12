@@ -1,5 +1,35 @@
-/* מרחב הטיפול: הלוגו המקורי שהועלה, ללא הרקע הכחול שסביבו. */
-:root{--merhav-mark:url("data:image/webp;base64,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")}
-.brand .brand__mark{background-image:var(--merhav-mark)!important;background-repeat:no-repeat!important;background-position:center!important;background-size:cover!important;background-color:transparent!important;border:0!important;border-radius:50%!important;color:transparent!important;overflow:hidden;display:inline-block;flex-shrink:0}
-.hero .hero__emblem{background-image:var(--merhav-mark)!important;background-repeat:no-repeat!important;background-position:center!important;background-size:contain!important;background-color:transparent!important;border:0!important;border-radius:50%!important;box-shadow:0 14px 34px rgba(61,46,34,.15)!important;overflow:hidden}
-.hero .hero__emblem::before,.hero .hero__emblem svg{display:none!important}
+/* High-resolution scalable logo based on the approved artwork.
+   Uses a separate SVG asset; no blue screenshot background and no pixelated raster upscaling. */
+:root{--merhav-logo:url("./assets/merhav-logo.svg")}
+.brand .brand__mark{
+  background-image:var(--merhav-logo)!important;
+  background-position:center!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  border:0!important;
+  border-radius:50%!important;
+  display:inline-block;
+  overflow:hidden;
+  color:transparent!important;
+  font-size:0!important;
+  line-height:0!important;
+  flex-shrink:0;
+  box-shadow:0 4px 14px rgba(23,30,41,.13);
+}
+.hero .hero__emblem{
+  background-image:var(--merhav-logo)!important;
+  background-position:center!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  border:0!important;
+  border-radius:50%!important;
+  box-shadow:0 14px 35px rgba(23,30,41,.13)!important;
+  overflow:hidden;
+}
+.hero .hero__emblem::before,.hero .hero__emblem::after,.hero .hero__emblem svg{display:none!important}
+@media (max-width:730px){
+ .brand .brand__mark{box-shadow:0 3px 10px rgba(23,30,41,.12)}
+ .hero .hero__emblem{box-shadow:0 9px 25px rgba(23,30,41,.13)!important}
+}
