@@ -264,6 +264,14 @@ h1,h2,h3{letter-spacing:-.025em}
   .hero__bg i,.video__stage::before{animation:none}
   .btn,.feature,.step,.install-card,.nav-cta,.brand__mark{transition:none}
 }
+
+/* Original marketing copy with the visual rhythm of Lilach's landing page */
+.hero__trust-box{max-width:690px;margin:0 auto 26px;padding:17px 22px;background:rgba(255,255,255,.79);border:1px solid rgba(107,82,64,.16);border-right:3px solid var(--gold);box-shadow:0 12px 30px rgba(61,46,34,.06);border-radius:16px;text-align:right}
+.hero__trust-box strong{display:block;font-size:16px;color:var(--brown-dark);font-weight:700;margin-bottom:6px}
+.hero__trust-box p{font-size:14px;color:var(--text-muted);line-height:1.85;margin:0}
+.hero__trial{font-size:14px;color:var(--brown);margin:13px auto 5px;font-weight:600}
+@media(max-width:730px){.hero__trust-box{padding:16px 18px}.hero__trust-box strong{font-size:15px}.hero__trust-box p{font-size:13px}.hero__trial{font-size:13px}}
+
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -301,13 +309,18 @@ h1,h2,h3{letter-spacing:-.025em}
         <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12h23a7 7 0 0 1 7 7v29H19a7 7 0 0 1-7-7V19a7 7 0 0 1 7-7z"/><path d="M22 23h14M22 31h9"/><path d="m28 42 5 4 10-12" stroke="#c8a96e"/></svg>
       </div>
       <div class="eyebrow" data-reveal style="--d:.05s">מרחב פרטי לכל מה שחשוב בקליניקה</div>
-      <h1 id="hero-title" data-reveal style="--d:.12s">כל הטיפול במקום אחד.<br><em>הנתונים נשארים אצלך.</em></h1>
-      <p class="hero__sub" data-reveal style="--d:.22s">תיעוד פגישות, ניהול מטופלים ומעקב תשלומים — בתוכנה פשוטה ונעימה, שפועלת על המחשב שלך גם בלי חיבור לאינטרנט.</p>
-      <div class="actions" data-reveal style="--d:.32s">
-        <a class="btn btn--primary" href="#install">להורדה ולהתקנה ←</a>
+      <h1 id="hero-title" data-reveal style="--d:.12s">ניהול מטופלים<br><em>בביטחה מלאה</em></h1>
+      <p class="hero__sub" data-reveal style="--d:.22s">תוכנה לתיעוד מפגשים, מעקב תשלומים וניהול מטופלים — הכל נשמר אצלך במחשב בלבד, מוצפן ומאובטח.</p>
+      <div class="hero__trust-box" data-reveal style="--d:.28s">
+        <strong>המטופלים שלך סומכים עליך. אתה יכול לסמוך על מרחב הטיפול.</strong>
+        <p>כמטפל, אתה מחויב לסודיות מקצועית — הנתונים לא עוברים שום שרת, לא נשמרים בענן, ולא נגישים לאף אחד חוץ ממך.</p>
+      </div>
+      <div class="actions" data-reveal style="--d:.35s">
+        <a class="btn btn--primary" href="#install">הורד גרסת ניסיון חינמית ←</a>
         <a class="btn btn--outline" href="#how">לגלות איך זה עובד</a>
       </div>
-      <p class="hero__meta" data-reveal style="--d:.44s"><span>Windows</span> · <span>Mac</span> · <span>שימוש ללא חיבור שוטף לאינטרנט</span></p>
+      <p class="hero__trial" data-reveal style="--d:.44s">עד 3 מטופלים · ללא הגבלת זמן · ללא כרטיס אשראי</p>
+      <p class="hero__meta" data-reveal style="--d:.5s"><span>Windows</span> · <span>Mac</span> · <span>שימוש ללא חיבור שוטף לאינטרנט</span></p>
     </div>
   </section>
   <div class="container">
@@ -330,14 +343,14 @@ h1,h2,h3{letter-spacing:-.025em}
   </section>
   <section class="section" id="features" aria-labelledby="features-title">
     <div class="container">
-      <div class="section-head" data-reveal><span class="eyebrow">בדיוק מה שצריך</span><h2 class="section-title" id="features-title">כלים נוחים לניהול השוטף</h2><p>פחות מעבר בין מחברות, קבצים וטבלאות. יותר רצף בעבודה היומיומית.</p></div>
+      <div class="section-head" data-reveal><span class="eyebrow">מה תקבל</span><h2 class="section-title" id="features-title">כל מה שמטפל צריך</h2><p>תיעוד מפגשים, מעקב תשלומים, אבטחה וגיבוי — הכל במקום אחד.</p></div>
       <div class="feature-grid">
-        <article class="feature" data-reveal style="--d:0s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="12" y="9" width="25" height="30" rx="4"/><path d="M20 18h10M20 24h10M20 30h5" class="accent"/><path d="M8 15v18"/></svg></div><h3>תיק מטופל מסודר</h3><p>פרטי המטופל והיסטוריית המפגשים נגישים מתוך המחשב.</p></article>
-        <article class="feature" data-reveal style="--d:0.09s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M11 35h26M16 28l15-16 5 5-15 16-7 2z"/><path d="m27 16 5 5" class="accent"/></svg></div><h3>תיעוד מפגשים</h3><p>סיכומים, נושאים והערות — באופן מסודר לכל מפגש.</p></article>
-        <article class="feature" data-reveal style="--d:0.18s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M29 16h-6a5 5 0 0 0 0 10h2a5 5 0 0 1 0 10h-8M24 12v24" class="accent"/></svg></div><h3>מעקב כספי</h3><p>ניהול מצב התשלומים וייצוא מידע כשצריך.</p></article>
-        <article class="feature" data-reveal style="--d:0s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 6 9 12v11c0 10 7 16 15 20 8-4 15-10 15-20V12z"/><path d="m17 24 5 5 9-10" class="accent"/></svg></div><h3>גישה מקומית</h3><p>המידע אינו מועבר לשרת של שירות ענן כחלק מהעבודה בתוכנה.</p></article>
-        <article class="feature" data-reveal style="--d:0.09s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M13 13h25v24H13z"/><path d="M9 18v25h25"/><path d="m19 25 5 5 8-9" class="accent"/></svg></div><h3>גיבוי ושחזור</h3><p>אפשרות ליצירת גיבוי כדי שלא להיות תלויים במחשב יחיד.</p></article>
-        <article class="feature" data-reveal style="--d:0.18s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="9" y="10" width="30" height="28" rx="5"/><path d="M9 19h30M17 28h12" class="accent"/></svg></div><h3>ממשק נעים ופשוט</h3><p>מיועד להתנהלות יומיומית בלי צורך בידע טכני מתקדם.</p></article>
+        <article class="feature" data-reveal style="--d:0s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M11 35h26M16 28l15-16 5 5-15 16-7 2z"/><path d="m27 16 5 5" class="accent"/></svg></div><h3>תיעוד מפגשים</h3><p>רשום סיכומים, נושאים, הערות ומשימות לפגישה הבאה — הכל מסודר לפי מטופל ותאריך.</p></article>
+        <article class="feature" data-reveal style="--d:0.09s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M29 16h-6a5 5 0 0 0 0 10h2a5 5 0 0 1 0 10h-8M24 12v24" class="accent"/></svg></div><h3>מעקב תשלומים</h3><p>ראה מי שילם ומי חייב, כמה הכנסת בחודש, וייצא הכל לאקסל בלחיצה אחת.</p></article>
+        <article class="feature" data-reveal style="--d:0.18s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 6 9 12v11c0 10 7 16 15 20 8-4 15-10 15-20V12z"/><path d="m17 24 5 5 9-10" class="accent"/></svg></div><h3>אבטחה מלאה</h3><p>הנתונים מוצפנים בסיסמה אישית. אף שרת, אף ענן — הכל נשמר רק אצלך.</p></article>
+        <article class="feature" data-reveal style="--d:0s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M13 13h25v24H13z"/><path d="M9 18v25h25"/><path d="m19 25 5 5 8-9" class="accent"/></svg></div><h3>גיבוי וייצוא</h3><p>גבה את כל הנתונים לקובץ מוצפן ושחזר בכל מחשב. ייצוא לאקסל תמיד זמין.</p></article>
+        <article class="feature" data-reveal style="--d:0.09s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="9" y="10" width="30" height="28" rx="4"/><path d="M9 19h30M17 28h7" class="accent"/><path d="m27 31 7-7" class="accent"/></svg></div><h3>ללא אינטרנט</h3><p>עובד תמיד — גם בלי חיבור לרשת, גם בחו"ל, גם כשהשרת "נופל".</p></article>
+        <article class="feature" data-reveal style="--d:0.18s"><div class="feature__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="9" y="10" width="30" height="28" rx="5"/><path d="M9 19h30M17 28h12" class="accent"/></svg></div><h3>פשוט לשימוש</h3><p>ממשק נקי שתבין ב-5 דקות. לא צריך הדרכה ולא ידע טכני.</p></article>
       </div>
     </div>
   </section>
@@ -400,9 +413,9 @@ h1,h2,h3{letter-spacing:-.025em}
   </section>
   <section class="bottom-cta" aria-label="יצירת קשר">
     <div class="container">
-      <span class="eyebrow" data-reveal>נשאר רק להתחיל</span><h2 data-reveal style="--d:.07s">יותר סדר בקליניקה. יותר שקט ביום־יום.</h2>
-      <p data-reveal style="--d:.14s">הורידו את התוכנה, התקינו בעזרת המדריך, והתחילו להכיר את סביבת העבודה.</p>
-      <div class="actions" data-reveal><a class="btn btn--primary" href="#install">בחירת גרסה והורדה ←</a><a class="btn btn--outline" href="https://wa.me/972549913379?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%9E%D7%A8%D7%97%D7%91%20%D7%94%D7%98%D7%99%D7%A4%D7%95%D7%9C" target="_blank" rel="noopener noreferrer">שאלה לפני שמתחילים?</a></div>
+      <span class="eyebrow" data-reveal>מוכנים להתחיל?</span><h2 data-reveal style="--d:.07s">מוכן לנסות?</h2>
+      <p data-reveal style="--d:.14s">הורד גרסת ניסיון חינמית ותראה בעצמך. ללא התחייבות, ללא כרטיס אשראי.</p>
+      <div class="actions" data-reveal><a class="btn btn--primary" href="#install">הורד בחינם ←</a><a class="btn btn--outline" href="https://wa.me/972549913379?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%9E%D7%A8%D7%97%D7%91%20%D7%94%D7%98%D7%99%D7%A4%D7%95%D7%9C" target="_blank" rel="noopener noreferrer">שאלות? נשמח לעזור</a></div>
     </div>
   </section>
 </main>
