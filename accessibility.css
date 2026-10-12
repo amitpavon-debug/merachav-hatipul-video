@@ -34,5 +34,9 @@ html.a11y-contrast :is(main,header,footer) :is(h1,h2,h3,h4,p,span,strong,b,small
 html.a11y-contrast :is(main,header,footer) a:not(.btn):not(.nav-cta){color:#ffeb65!important}
 html.a11y-contrast :is(main,header,footer) :is(.btn,.nav-cta){background:#ffeb65!important;background-image:none!important;color:#000!important;border:2px solid #fff!important}
 html.a11y-contrast .a11y-widget{color:#2c1f14}
+/* The assistive menu must remain readable while high contrast is active. */
+html.a11y-contrast .a11y-panel{background:#fff!important;color:#2c1f14!important;border-color:#dbcbb9!important}
+html.a11y-contrast .a11y-panel-head{background:#6b5240!important;color:#fff!important}
+
 @media(max-width:600px){.a11y-widget{left:12px;bottom:12px}.a11y-trigger{width:54px;height:54px}.a11y-panel{bottom:65px;width:min(356px,calc(100vw - 24px))}.a11y-panel-body{padding:16px}}
 @media(prefers-reduced-motion:reduce){.a11y-trigger{transition:none}}
