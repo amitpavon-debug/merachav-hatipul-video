@@ -1,0 +1,38 @@
+/* עזרי נגישות לדף מרחב הטיפול */
+.a11y-widget{position:fixed;left:18px;bottom:18px;z-index:99999;direction:rtl;font:400 16px/1.5 Heebo,Arial,sans-serif;text-align:right}
+.a11y-trigger{width:58px;height:58px;display:grid;place-items:center;cursor:pointer;border-radius:50%;border:3px solid #fff;background:#6b5240;color:white;box-shadow:0 9px 28px rgba(36,28,22,.33)}
+.a11y-trigger:hover{background:#3d2e22}
+.a11y-trigger svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.a11y-panel{position:absolute;bottom:72px;left:0;width:min(370px,calc(100vw - 26px));max-height:calc(100dvh - 108px);overflow:auto;overscroll-behavior:contain;background:#fff;color:#2c1f14;border:1px solid #dbcbb9;border-radius:20px;box-shadow:0 22px 60px rgba(31,23,18,.3);text-align:right}
+.a11y-panel[hidden]{display:none!important}
+.a11y-panel-head{display:flex;align-items:center;justify-content:space-between;background:#6b5240;color:white;padding:14px 18px;gap:10px}
+.a11y-panel-head strong{font:700 20px Heebo,Arial,sans-serif}
+.a11y-close{width:42px;height:42px;border:1px solid rgba(255,255,255,.55);border-radius:11px;background:transparent;color:#fff;font-size:30px;cursor:pointer;line-height:1}
+.a11y-panel-body{padding:20px}
+.a11y-text-size{border:0;padding:0;margin:0 0 18px;min-width:0}
+.a11y-text-size legend{font-weight:700;color:#3d2e22;margin-bottom:10px}
+.a11y-text-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;align-items:center;text-align:center}
+.a11y-text-row button,.a11y-reset{cursor:pointer;min-height:48px;border:1px solid #d9cbba;background:#f7f3ee;color:#3d2e22;border-radius:12px;font-size:18px;font-weight:700}
+.a11y-text-row output{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
+.a11y-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.a11y-options button{border:1px solid #d9cbba;border-radius:13px;background:#fff;color:#3d2e22;min-height:72px;padding:12px 9px;font-weight:700;cursor:pointer;font-size:14px;line-height:1.45;text-align:center}
+.a11y-options button[aria-pressed="true"]{background:#f0e4d5;border-color:#6b5240;box-shadow:inset 0 0 0 1px #6b5240}
+.a11y-options button:hover,.a11y-reset:hover{background:#efe5d8}
+.a11y-reset{width:100%;margin-top:17px;font-size:15px}
+.a11y-note{font-size:12px;color:#6b5240;margin:14px 0 0;line-height:1.6}
+.a11y-widget :is(button,[tabindex]):focus-visible{outline:3px solid #aa7f4e!important;outline-offset:3px!important}
+.footer-accessibility{border:0;padding:0;background:none;color:#e6d9cc;font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.footer-accessibility:hover{color:white}
+html.a11y-readable-font body :not(.a11y-widget):not(.a11y-widget *){font-family:Arial,Tahoma,sans-serif!important}
+html.a11y-highlight-links :is(main,header,footer) a{text-decoration:underline!important;text-underline-offset:4px!important;text-decoration-thickness:3px!important;outline:1px solid currentColor;outline-offset:3px}
+html.a11y-reduced-motion{scroll-behavior:auto!important}
+html.a11y-reduced-motion body *:not(.a11y-widget):not(.a11y-widget *){animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.a11y-reduced-motion [data-reveal]{opacity:1!important;transform:none!important}
+html.a11y-contrast body{background:#000!important;color:#fff!important}
+html.a11y-contrast :is(header,footer,main,section,.hero,.story,.trust-strip,.trust-item,.feature,.step,.install-card,.faq details,.faq,.bottom-cta,.quotation,.video,.notice,.video__stage){background:#000!important;background-image:none!important;color:#fff!important;border-color:#fff!important;box-shadow:none!important}
+html.a11y-contrast :is(main,header,footer) :is(h1,h2,h3,h4,p,span,strong,b,small,li,summary,.eyebrow,.feature-num,.step__no){color:#fff!important}
+html.a11y-contrast :is(main,header,footer) a:not(.btn):not(.nav-cta){color:#ffeb65!important}
+html.a11y-contrast :is(main,header,footer) :is(.btn,.nav-cta){background:#ffeb65!important;background-image:none!important;color:#000!important;border:2px solid #fff!important}
+html.a11y-contrast .a11y-widget{color:#2c1f14}
+@media(max-width:600px){.a11y-widget{left:12px;bottom:12px}.a11y-trigger{width:54px;height:54px}.a11y-panel{bottom:65px;width:min(356px,calc(100vw - 24px))}.a11y-panel-body{padding:16px}}
+@media(prefers-reduced-motion:reduce){.a11y-trigger{transition:none}}
